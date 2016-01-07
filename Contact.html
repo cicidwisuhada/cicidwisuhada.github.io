@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+<head><!-- stylesheets -->
+<style>
+/* ~~~~~~~~~ layout ~~~~~~~~~~ */
+#container {width: 960px;margin: 20px auto;background:#efb1ff; ;padding: 30px;overflow: hidden;}
+
+/* ~~~~~~~~~ header ~~~~~~~~~~ */
+#main-navigation {border-bottom: 5px solid #ed0baf;margin: 20px 0;}
+#main-navigation ul {overflow: hidden;width: 100%;list-style: none;font-size: 1.6em;}#main-navigation li {float: left;}
+#main-navigation li a {background: #2232af;margin:1 5px;padding: 5px 30px;display: block;color: #05f322;text-decoration: none;}
+#main-navigation li.current a 
+#main-navigation li a:hover 
+
+/* ~~~~~~~~~ article ~~~~~~~~~~ */
+article {width: 100%;overflow: hidden;}
+section {float: left;width: 500px;}
+
+/* ~~~~~~~~~ aside ~~~~~~~~~~ */
+aside {float: right;width: 310px;}
+
+/* ~~~~~~~~~ footer ~~~~~~~~~~ */ 
+footer 
+/* ~~~~~~~~~ common ~~~~~~~~~~ */
+body, select, input, textarea 
+body {background: #ccc;}
+section p, section ul, section ol,
+aside p, aside ul, aside ol 
+section ul 
+section ol 
+
+/* ~~~~~~~~~ generic ~~~~~~~~~~ */
+img, fieldset {border:5;}
+html {overflow-y: scroll;}
+header, nav, section, article, figure, aside, footer {display: block;}
+<body>
+#dodecahedron {
+ position: absolute;
+ left: 50%;
+ top: 50%;
+ margin: -90px 0 0 -70px;
+ -webkit-transform-style: preserve-3d;
+ -moz-transform-style: preserve-3d;
+ transform-style: preserve-3d;
+ -webkit-transform-origin: 70px 80px -100px;
+ -moz-transform-origin: 70px 80px -100px;
+ transform-origin: 70px 80px -100px;
+}
+
+.group {
+ position: absolute;
+ left: 0;
+ top: 0;
+ width: 166px;
+ height: 156px;
+ -webkit-transform-origin: 0 100%;
+ -moz-transform-origin: 0 100%;
+ transform-origin: 0 100%;
+ -webkit-transition: -webkit-transform 1s ease-out;
+ -moz-transition: -moz-transform 1s ease-out;
+ transition: transform 1s ease-out;
+ -webkit-transform-style: preserve-3d;
+ -moz-transform-style: preserve-3d;
+ transform-style: preserve-3d;
+}
+
+#group1 {
+ left: -23px;
+ top: -78px;
+ -webkit-transform: rotateZ(-36deg) rotateX(20deg);
+ -moz-transform: rotateZ(-36deg) rotateX(20deg);
+ transform: rotateZ(-36deg) rotateX(20deg);
+}
+
+#dodecahedron.closed #group1 {
+ -webkit-transform: rotateZ(-36deg) rotateX(63deg);
+ -moz-transform: rotateZ(-36deg) rotateX(63deg);
+ transform: rotateZ(-36deg) rotateX(63deg);
+}
+
+.groupB {
+ left: 55px;
+ top: -173px;
+ -webkit-transform: rotateZ(36deg) rotateX(20deg);
+ -moz-transform: rotateZ(36deg) rotateX(20deg);
+ transform: rotateZ(36deg) rotateX(20deg);
+}
+
+#dodecahedron.closed .groupB {
+ -webkit-transform: rotateZ(36deg) rotateX(63deg);
+ -moz-transform: rotateZ(36deg) rotateX(63deg);
+ transform: rotateZ(36deg) rotateX(63deg);
+}
+
+.groupC {
+ left: -24px;
+ top: -78px;
+ -webkit-transform: rotateZ(-36deg) rotateX(20deg);
+ -moz-transform: rotateZ(-36deg) rotateX(20deg);
+ transform: rotateZ(-36deg) rotateX(20deg);
+}
+
+#dodecahedron.closed .groupC {
+ -webkit-transform: rotateZ(-36deg) rotateX(63deg);
+ -moz-transform: rotateZ(-36deg) rotateX(63deg);
+ transform: rotateZ(-36deg) rotateX(63deg);
+}
+
+#group2 {
+ left: 43px;
+ top: 26px;
+ -webkit-transform: rotateZ(-108deg) rotateX(20deg);
+ -moz-transform: rotateZ(-108deg) rotateX(20deg);
+ transform: rotateZ(-108deg) rotateX(20deg);
+}
+
+#dodecahedron.closed #group2 {
+ -webkit-transform: rotateZ(-108deg) rotateX(63deg);
+ -moz-transform: rotateZ(-108deg) rotateX(63deg);
+ transform: rotateZ(-108deg) rotateX(63deg);
+}
+
+#group3 {
+ left: 162px;
+ top: -4px;
+ -webkit-transform: rotateZ(-180deg) rotateX(20deg);
+ -moz-transform: rotateZ(-180deg) rotateX(20deg);
+ transform: rotateZ(-180deg) rotateX(20deg);
+}
+
+#dodecahedron.closed #group3 {
+ -webkit-transform: rotateZ(-180deg) rotateX(63deg);
+ -moz-transform: rotateZ(-180deg) rotateX(63deg);
+ transform: rotateZ(-180deg) rotateX(63deg);
+}
+
+#group4 {
+ left: 169px;
+ top: -128px;
+ -webkit-transform: rotateZ(-252deg) rotateX(20deg);
+ -moz-transform: rotateZ(-252deg) rotateX(20deg);
+ transform: rotateZ(-252deg) rotateX(20deg);
+}
+
+#dodecahedron.closed #group4 {
+ -webkit-transform: rotateZ(-252deg) rotateX(63deg);
+ -moz-transform: rotateZ(-252deg) rotateX(63deg);
+ transform: rotateZ(-252deg) rotateX(63deg);
+}
+
+#group5 {
+ left: 54px;
+ top: -173px;
+ -webkit-transform: rotateZ(-324deg) rotateX(20deg);
+ -moz-transform: rotateZ(-324deg) rotateX(20deg);
+ transform: rotateZ(-324deg) rotateX(20deg);
+}
+
+#dodecahedron.closed #group5 {
+ -webkit-transform: rotateZ(-324deg) rotateX(63deg);
+ -moz-transform: rotateZ(-324deg) rotateX(63deg);
+ transform: rotateZ(-324deg) rotateX(63deg);
+}
+
+.pentagon {
+ position: absolute;
+ left: 0;
+ top: 0;
+ width: 166px;
+ height: 156px;
+ opacity: 0.67;
+}
+
+.p {
+    position: absolute;
+}
+
+.p1 {
+    position: absolute;
+    left: 31px;
+    top: 58px;
+    width: 100px;
+    height: 96px;
+    background-color: #ff0000;
+}
+
+.p2 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 0;
+    height: 0;
+    border-bottom: 59px solid #ff0000;
+    border-left: 81px solid transparent;
+    border-right: 81px solid transparent;
+}
+
+.p3 {
+    position: absolute;
+    left: 0px;
+    top: 58px;
+    width: 0;
+    height: 0;
+    border-bottom: 96px solid transparent;
+    border-right: 32px solid #ff0000;
+}
+
+.p4 {
+    position: absolute;
+    left: 130px;
+    top: 58px;
+    width: 0;
+    height: 0;
+    border-bottom: 96px solid transparent;
+    border-left: 32px solid #ff0000;
+}
+
+#pentagon2 .p1 {
+ background-color: #ff6600;
+}
+
+#pentagon2 .p2 {
+ border-bottom-color: #ff6600;
+}
+
+#pentagon2 .p3 {
+ border-right-color: #ff6600;
+}
+
+#pentagon2 .p4 {
+ border-left-color: #ff6600;
+}
+
+#pentagon3 .p1 {
+ background-color: #ffcc00;
+}
+
+#pentagon3 .p2 {
+ border-bottom-color: #ffcc00;
+}
+
+#pentagon3 .p3 {
+ border-right-color: #ffcc00;
+}
+
+#pentagon3 .p4 {
+ border-left-color: #ffcc00;
+}
+
+#pentagon4 .p1 {
+ background-color: #ccff00;
+}
+
+#pentagon4 .p2 {
+ border-bottom-color: #ccff00;
+}
+
+#pentagon4 .p3 {
+ border-right-color: #ccff00;
+}
+
+#pentagon4 .p4 {
+ border-left-color: #ccff00;
+}
+
+#pentagon5 .p1 {
+ background-color: #66ff00;
+}
+
+#pentagon5 .p2 {
+ border-bottom-color: #66ff00;
+}
+
+#pentagon5 .p3 {
+ border-right-color: #66ff00;
+}
+
+#pentagon5 .p4 {
+ border-left-color: #66ff00;
+}
+
+#pentagon6 .p1 {
+ background-color: #00cc33;
+}
+
+#pentagon6 .p2 {
+ border-bottom-color: #00cc33;
+}
+
+#pentagon6 .p3 {
+ border-right-color: #00cc33;
+}
+
+#pentagon6 .p4 {
+ border-left-color: #00cc33;
+}
+
+#pentagon7 .p1 {
+ background-color: #00cc99;
+}
+
+#pentagon7 .p2 {
+ border-bottom-color: #00cc99;
+}
+
+#pentagon7 .p3 {
+ border-right-color: #00cc99;
+}
+
+#pentagon7 .p4 {
+ border-left-color: #00cc99;
+}
+
+#pentagon8 .p1 {
+ background-color: #00ccff;
+}
+
+#pentagon8 .p2 {
+ border-bottom-color: #00ccff;
+}
+
+#pentagon8 .p3 {
+ border-right-color: #00ccff;
+}
+
+#pentagon8 .p4 {
+ border-left-color: #00ccff;
+}
+
+#pentagon9
+
+.p1 { background-color: #0066ff; } #pentagon9 .p2 { border-bottom-color: #0066ff; } #pentagon9 .p3 { border-right-color: #0066ff; } #pentagon9 .p4 { border-left-color: #0066ff; } #pentagon10 .p1 { background-color: #0000ff; } #pentagon10 .p2 { border-bottom-color: #0000ff; } #pentagon10 .p3 { border-right-color: #0000ff; } #pentagon10 .p4 { border-left-color: #0000ff; } #pentagon11 .p1 { background-color: #6600ff; } #pentagon11 .p2 { border-bottom-color: #6600ff; } #pentagon11 .p3 { border-right-color: #6600ff; } #pentagon11 .p4 { border-left-color: #6600ff; } #pentagon12 .p1 { background-color: #cc00ff; } #pentagon12 .p2 { border-bottom-color: #cc00ff; } #pentagon12 .p3 { border-right-color: #cc00ff; } #pentagon12 .p4 { border-left-color: #cc00ff; } p { margin: 1em 0 0 0; -webkit-transform: translateZ(9999px); -moz-transform: translateZ(9999px); transform: translateZ(9999px); text-align: center; } p a:last-child { margin-left: 1em; border-left: 1px solid #4c4c4c; padding-left: 1em; }
+KODE HTML DODECAHEDRON
+
+</style>
+</head>
+ <body class="home">
+<div id="container">
+<header id="page-header">
+<marquee behavior="alternate"> <font color="#f704a1" size="5">PUSAT BUSANA KEREN</font> </marquee>
+<nav id="main-navigation">
+<ul>
+<tr>
+<li class="current"><td height="30"><center><b><a href="home.html">Home</li></a></center></td>
+</tr>
+<li style="color:yellow;"><td height="30"><center><b><a href="about.html">About</li></a></center></td>
+</tr>
+<tr>
+<li><td height="30"><center><b><a href="profile.html">Profile</li></a></center></td>
+</tr>
+<tr>
+<li><td height="30"><center><b><a href="contact.html">Contact</li></a></center></td>
+</tr>
+<tr>
+<li><td height="30"><center><b><a href="galery.html">Galery</li></a></center></td>
+</tr>
+</ul>
+</nav>
+<body>
+<div id="dodecahedron">
+  <div id="pentagon1" class="pentagon">
+   <div class="p p1"></div>
+   <div class="p p2"></div>
+   <div class="p p3"></div>
+   <div class="p p4"></div>
+  </div> <!-- /.pentagon -->
+  <div id="group1" class="group">
+   <div id="pentagon2" class="pentagon">
+    <div class="p p1"></div>
+    <div class="p p2"></div>
+    <div class="p p3"></div>
+    <div class="p p4"></div>
+   </div> <!-- /.pentagon -->
+   <div class="group groupB">
+    <div id="pentagon3" class="pentagon">
+     <div class="p p1"></div>
+     <div class="p p2"></div>
+     <div class="p p3"></div>
+     <div class="p p4"></div>
+    </div> <!-- /.pentagon -->
+     <div class="group groupC">
+      <div id="pentagon4" class="pentagon">
+       <div class="p p1"></div>
+       <div class="p p2"></div>
+       <div class="p p3"></div>
+       <div class="p p4"></div>
+      </div> <!-- /.pentagon -->
+     </div> <!-- /.groupC -->
+   </div> <!-- /.groupB -->
+  </div> <!-- /#group1 -->
+  <div id="group2" class="group">
+   <div id="pentagon5" class="pentagon">
+    <div class="p p1"></div>
+    <div class="p p2"></div>
+    <div class="p p3"></div>
+    <div class="p p4"></div>
+   </div> <!-- /.pentagon -->
+   <div class="group groupB">
+    <div id="pentagon6" class="pentagon">
+     <div class="p p1"></div>
+     <div class="p p2"></div>
+     <div class="p p3"></div>
+     <div class="p p4"></div>
+    </div> <!-- /.pentagon -->
+   </div> <!-- /.groupB -->
+<html>
+<head>
+
+
+ </div> <!-- /#group2 -->
+  <div id="group3" class="group">
+   <div id="pentagon7" class="pentagon">
+    <div class="p p1"></div>
+    <div class="p p2"></div>
+    <div class="p p3"></div>
+    <div class="p p4"></div>
+   </div> <!-- /.pentagon -->
+   <div class="group groupB">
+    <div id="pentagon8" class="pentagon">
+     <div class="p p1"></div>
+     <div class="p p2"></div>
+     <div class="p p3"></div>
+     <div class="p p4"></div>
+    </div> <!-- /.pentagon -->
+   </div> <!-- /.groupB -->
+  </div> <!-- /#group3 -->
+  <div id="group4" class="group">
+   <div id="pentagon9" class="pentagon">
+    <div class="p p1"></div>
+    <div class="p p2"></div>
+    <div class="p p3"></div>
+    <div class="p p4"></div>
+   </div> <!-- /.pentagon -->
+   <div class="group groupB">
+    <div id="pentagon10" class="pentagon">
+     <div class="p p1"></div>
+     <div class="p p2"></div>
+     <div class="p p3"></div>
+     <div class="p p4"></div>
+    </div> <!-- /.pentagon -->
+   </div> <!-- /.groupB -->
+  </div> <!-- /#group4 -->
+  <div id="group5" class="group">
+   <div id="pentagon11" class="pentagon">
+    <div class="p p1"></div>
+    <div class="p p2"></div>
+    <div class="p p3"></div>
+    <div class="p p4"></div>
+   </div> <!-- /.pentagon -->
+   <div class="group groupB">
+    <div id="pentagon12" class="pentagon">
+     <div class="p p1"></div>
+     <div class="p p2"></div>
+     <div class="p p3"></div>
+     <div class="p p4"></div>
+    </div> <!-- /.pentagon -->
+   </div> <!-- /.groupB -->
+  </div> <!-- /#group5 -->
+ </div> <!--dodecahedron-->
+</form>
+</section>
+</body>
+</html>
+
+
+
